@@ -2544,6 +2544,27 @@
       element.style.right = '20px';
     }, Math.random() * 12000 + 5000);
   </script>
+  
+  <script> 
+   var botaoServicos = window.document.querySelector('.row.text-center')
+   var listaBotoes = Array.from(botaoServicos.querySelectorAll('.fa-stack.fa-4x'))
+
+   listaBotoes[0].addEventListener('click', clickEcommerce)
+   listaBotoes[1].addEventListener('click', clickDesign)
+   listaBotoes[2].addEventListener('click', clickSeguranca)
+
+   function clickEcommerce (){
+	   listaBotoes[0].style.background = 'yellow'
+   }
+
+   function clickDesign () {
+      listaBotoes[1].style.background = 'yellow'
+   }
+
+   function clickSeguranca () {
+      listaBotoes[2].style.background = 'yellow'
+   }
+  </script>
 
 </body>
 
