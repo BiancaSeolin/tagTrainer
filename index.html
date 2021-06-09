@@ -55,6 +55,8 @@
     document.addEventListener('load', setTimeout(function(){
 	ga('send', 'event', 'PageView', '>= 1 min', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
     	}, 60000));
+
+  // *******************************************************************************************************************
     
     document.addEventListener('scroll', function(){
  
@@ -691,6 +693,52 @@
   </script>
   <!-- End Testando Event Listeners Tag Trainer -->
 
+  <!-- Tags Secao Portifolio -->
+  <script> 
+	var links = Array.from(document.querySelectorAll('#portfolio .row .portfolio-link'));
+	links[0].addEventListener('click', function () {
+		ga('send', 'event', 'Click', 'Portfolio Rover', 'https://gifardini.github.io/tagTrainer/');
+	});
+	links[1].addEventListener('click', function () {
+		ga('send', 'event', 'Click', 'Portfolio Jamilin', 'https://gifardini.github.io/tagTrainer/');
+	});
+	links[2].addEventListener('click', function () {
+		ga('send', 'event', 'Click', 'Portfolio Arngren', 'https://gifardini.github.io/tagTrainer/');
+	});
+  </script>
+  <!-- Tags Secao Portifolio -->
+	
+  <!-- Tags Menu Superior -->
+  
+  <script>
+	  var menu = document.querySelectorAll('#mainNav li');
+	  
+	  menu[1].addEventListener('click', function () {
+		ga('send', 'event', 'Click', 'Menu Servicos', 'https://gifardini.github.io/tagTrainer/');
+	});
+	  menu[2].addEventListener('click', function () {
+		ga('send', 'event', 'Click', 'Menu Portfolio', 'https://gifardini.github.io/tagTrainer/');
+	});
+	  menu[3].addEventListener('click', function () {
+		ga('send', 'event', 'Click', 'Menu Sobre', 'https://gifardini.github.io/tagTrainer/');
+	});
+	  menu[4].addEventListener('click', function () {
+		ga('send', 'event', 'Click', 'Menu Time', 'https://gifardini.github.io/tagTrainer/');
+	});
+	  menu[5].addEventListener('click', function () {
+		ga('send', 'event', 'Click', 'Menu Contato', 'https://gifardini.github.io/tagTrainer/');
+	});
+	  
+	//************************************************************************************************
+	// Tag botao orcamento
+	  
+	  document.querySelector('.intro-text a').addEventListener('click', function () {
+		ga('send', 'event', 'Click', 'Button Orcamento', 'https://gifardini.github.io/tagTrainer/');
+	});
+	//************************************************************************************************ 
+  </script>
+  <!-- End Tags Secao Menu Superior -->
+
   <!-- Tags Footer -->
   <script>
 	  
@@ -722,22 +770,6 @@
 	  
  </script>
  <!-- End Tags Footer -->
-
- <!-- Tags Secao Portifolio -->
-  <script> 
-	var links = Array.from(document.querySelectorAll('#portfolio .row .portfolio-link'));
-	links[0].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Portfolio Rover', 'https://gifardini.github.io/tagTrainer/');
-	});
-	links[1].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Portfolio Jamilin', 'https://gifardini.github.io/tagTrainer/');
-	});
-	links[2].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Portfolio Arngren', 'https://gifardini.github.io/tagTrainer/');
-	});
-  </script>
-  <!-- Tags Secao Portifolio -->
-  
 
 </body>
 
