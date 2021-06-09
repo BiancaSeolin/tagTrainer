@@ -928,8 +928,33 @@
       m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-198258633-1', 'auto');
+    ga('create', 'UA-198258633-1', 'auto')
     ga('send', 'pageview');
+    
+    document.addEventListener('scroll', function(){
+ 
+    var h =  document.documentElement,
+        b =  document.body,
+        st =  'scrollTop',
+        sh =  'scrollHeight';
+ 
+    var percent = parseInt ( (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
+ 
+    console.log(percent + "%");
+   if (percent == 25){
+    ga('send', 'event', 'Scrolling', 'moreThan25%', '{{Page URL}}', { 'nonInteraction': 1 });
+   }
+   else if (percent == 50){
+    	ga('send', 'event', 'Scrolling', 'moreThan50%', '{{Page URL}}', { 'nonInteraction': 1 });
+   }
+   else if (percent == 75){
+    	ga('send', 'event', 'Scrolling', 'moreThan75%', '{{Page URL}}', { 'nonInteraction': 1 });
+   }
+   else if (percent == 90){
+   	ga('send', 'event', 'Scrolling', 'moreThan90%', '{{Page URL}}', { 'nonInteraction': 1 });
+   }
+   
+});
   </script>
 
 </head>
