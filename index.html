@@ -73,6 +73,15 @@
    }
    
   });
+  
+  var _this = this;
+  ga('send', 'event', 'FSubmit', 'Submitted', {
+    'hitCallback': function() {
+        $(_this).parents('form').first().submit();
+     }
+  });
+
+  return !window.ga;
 	  
  </script>
  
