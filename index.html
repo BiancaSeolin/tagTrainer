@@ -47,6 +47,14 @@
 
     ga('create', 'UA-198258633-1', 'auto')
     ga('send', 'pageview');
+	  
+   // ******************************************************************************************************************
+
+  // Page view de 1 minuto 
+    
+    document.addEventListener('load', setTimeout(function(){
+	ga('send', 'event', 'PageView', '>= 1 min', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
+    	}, 60000));
     
     document.addEventListener('scroll', function(){
  
@@ -58,6 +66,8 @@
     var percent = parseInt ( (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
  
    console.log(percent + "%");
+	    
+  // tag de scroll
 	    
   if (percent == 25){
         ga('send', 'event', 'Scrolling', '25%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
@@ -73,7 +83,8 @@
    }
    
   });
-  
+	  
+  // tag de submissao do formulario
   document.addEventListener('submit', function () {
   	ga('send', 'event', 'Contact Form', 'Submitted', 'https://gifardini.github.io/tagTrainer/');
   });
@@ -679,7 +690,8 @@
    }
   </script>
   <!-- End Testando Event Listeners Tag Trainer -->
-	
+
+  <!-- Tags Footer -->
   <script>
 	  
 	  document.querySelector('footer .list-inline.social-buttons .fa.fa-twitter')
@@ -709,6 +721,23 @@
 	})
 	  
  </script>
+ <!-- End Tags Footer -->
+
+ <!-- Tags Secao Portifolio -->
+  <script> 
+	var links = Array.from(document.querySelectorAll('#portfolio .row .portfolio-link'));
+	links[0].addEventListener('click', function () {
+		ga('send', 'event', 'Click', 'Portfolio Rover', 'https://gifardini.github.io/tagTrainer/');
+	});
+	links[1].addEventListener('click', function () {
+		ga('send', 'event', 'Click', 'Portfolio Jamilin', 'https://gifardini.github.io/tagTrainer/');
+	});
+	links[2].addEventListener('click', function () {
+		ga('send', 'event', 'Click', 'Portfolio Arngren', 'https://gifardini.github.io/tagTrainer/');
+	});
+  </script>
+  <!-- Tags Secao Portifolio -->
+  
 
 </body>
 
