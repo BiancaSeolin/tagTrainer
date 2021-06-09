@@ -74,7 +74,9 @@
    
   });
   
-  
+  document.querySelector('form').addEventListener('submit', function () {
+  	ga('send', 'event', 'Contact Form', 'submit');
+  });
 	  
  </script>
  
