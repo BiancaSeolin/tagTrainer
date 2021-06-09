@@ -77,6 +77,12 @@
   document.addEventListener('submit', function () {
   	ga('send', 'event', 'Contact Form', 'Submitted', 'https://gifardini.github.io/tagTrainer/');
   });
+  
+  document.querySelector('footer').querySelector('.list-inline.social-buttons').querySelector('.fa.fa-facebook')
+	.addEventListener('mouseover', function () {
+
+    		ga('send', 'event', 'Mouseover', 'Footer Facebook Button', 'https://gifardini.github.io/tagTrainer/');
+	});
 	  
  </script>
  
