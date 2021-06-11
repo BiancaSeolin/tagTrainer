@@ -55,9 +55,9 @@
 	  
   function once() {
     SetTimeout(ga('send', 'event', 'PageView', '>= 1 min', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 }), 6000);
-    button.removeEventListener("load", once);
+    document.removeEventListener("load", once);
   }
-  button.addEventListener("load", once, true);
+  document.addEventListener("load", once, true);
 	  
   // *******************************************************************************************************************
     
