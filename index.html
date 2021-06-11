@@ -53,9 +53,9 @@
 
   // Page view de 1 minuto 
 
-  document.addEventListener('load', function () {
-	  setTimeout(ga('send', 'event', 'PageView', '>= 1 min', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 }), 6000);
-  }
+  document.addEventListener('load', () => setTimeout(function () {
+	  ga('send', 'event', 'PageView', '>= 1 min', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
+  }, 60000);
 	  
   // *******************************************************************************************************************
     
