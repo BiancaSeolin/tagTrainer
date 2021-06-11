@@ -48,20 +48,20 @@
     ga('create', 'UA-198258633-1', 'auto')
     ga('send', 'pageview');
 	  
-    function onetime(node, type, callback) {
-  	node.addEventListener(type, function(e) {
-      	e.target.removeEventListener(e.type, arguments.callee);
-      	return callback(e);
-    	});
-    }
-	  
+    	  
    // ******************************************************************************************************************
 
   // Page view de 1 minuto 
+	  
+     function once() {
+	setTimeout(function(){
+		ga('send', 'event', 'PageView', '>= 1 min', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
+    	}, 60000);
     
-    onetime(document, 'load', () => setTimeout(function(){
-	ga('send', 'event', 'PageView', '>= 1 min', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
-    	}, 60000));
+    	button.removeEventListener("load", once);
+     }
+	  
+     document.addEventListener('load', once);
 
   // *******************************************************************************************************************
     
