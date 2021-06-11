@@ -54,7 +54,7 @@
     
     document.addEventListener('load', () => setTimeout(function(){
 	ga('send', 'event', 'PageView', '>= 1 min', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
-    	}, 60000), false);
+    	}, 60000), true);
 
   // *******************************************************************************************************************
     
@@ -84,7 +84,7 @@
    	ga('send', 'event', 'Scrolling', '100%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
    }
    
-  });
+  }, true);
 	  
   // tag de submissao do formulario
   document.addEventListener('submit', function () {
