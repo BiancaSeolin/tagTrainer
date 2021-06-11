@@ -59,33 +59,81 @@
 	  
   // *******************************************************************************************************************
     
-    document.addEventListener('scroll', function(){
+    var scrollFunction25 = function(){
  
-    var h =  document.documentElement,
+    	var h =  document.documentElement,
         b =  document.body,
         st =  'scrollTop',
         sh =  'scrollHeight';
  
-    var percent = parseInt ( (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
+    	var percent = parseInt ( (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
  
-   console.log(percent + "%");
+   	console.log(percent + "%");
 	    
-  // tag de scroll
+   	// tag de scroll 25
 	    
-  if (percent == 25){
-        ga('send', 'event', 'Scrolling', '25%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
-   }
-   else if (percent == 50){
-    	ga('send', 'event', 'Scrolling', '50%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
-   }
-   else if (percent == 75){
-    	ga('send', 'event', 'Scrolling', '75%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
-   }
-   else if (percent == 100){
-   	ga('send', 'event', 'Scrolling', '100%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
-   }
-   
-  });
+   	if (percent == 25){
+        	ga('send', 'event', 'Scrolling', '25%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
+		document.removeEventListener('scroll', scrollFunction25);
+   	}  
+  }
+	  
+  var scrollFunction50 = function(){
+	var h =  document.documentElement,
+        b =  document.body,
+        st =  'scrollTop',
+        sh =  'scrollHeight';
+ 
+    	var percent = parseInt ( (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
+ 
+   	console.log(percent + "%");
+	    
+  	// tag de scroll50
+  	if (percent == 50){
+    		ga('send', 'event', 'Scrolling', '50%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
+		document.removeEventListener('scroll', scrollFunction50);
+   	}
+  } 
+  
+ var scrollFunction75 = function(){
+	var h =  document.documentElement,
+        b =  document.body,
+        st =  'scrollTop',
+        sh =  'scrollHeight';
+ 
+    	var percent = parseInt ( (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
+ 
+   	console.log(percent + "%");
+	    
+  	// tag de scroll75
+  	if (percent == 75){
+    		ga('send', 'event', 'Scrolling', '75%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
+		document.removeEventListener('scroll', scrollFunction50);
+   	}
+  } 
+ 
+  var scrollFunction100 = function(){
+	var h =  document.documentElement,
+        b =  document.body,
+        st =  'scrollTop',
+        sh =  'scrollHeight';
+ 
+    	var percent = parseInt ( (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
+ 
+   	console.log(percent + "%");
+	    
+  	// tag de scroll100
+  	if (percent == 100){
+    		ga('send', 'event', 'Scrolling', '100%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
+		document.removeEventListener('scroll', scrollFunction50);
+   	}
+  } 
+  
+  document.addEventListener('scroll', scrollFunction25);
+  document.addEventListener('scroll', scrollFunction50);
+  document.addEventListener('scroll', scrollFunction75);
+  document.addEventListener('scroll', scrollFunction100);
+	  
 	  
   // tag de submissao do formulario
   document.addEventListener('submit', function () {
