@@ -95,7 +95,7 @@
    	}
   } 
   
- var scrollFunction75 = function(){
+  var scrollFunction75 = function(){
 	var h =  document.documentElement,
         b =  document.body,
         st =  'scrollTop',
@@ -108,7 +108,7 @@
   	// tag de scroll75
   	if (percent == 75){
     		ga('send', 'event', 'Scrolling', '75%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
-		document.removeEventListener('scroll', scrollFunction50);
+		document.removeEventListener('scroll', scrollFunction75);
    	}
   } 
  
@@ -125,7 +125,7 @@
   	// tag de scroll100
   	if (percent == 100){
     		ga('send', 'event', 'Scrolling', '100%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
-		document.removeEventListener('scroll', scrollFunction50);
+		document.removeEventListener('scroll', scrollFunction100);
    	}
   } 
   
