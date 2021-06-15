@@ -788,37 +788,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Tags Footer -->
   <script>
 	  
-	  // Mouseover sobre o botao do Twitter
-	  document.querySelector('footer .list-inline.social-buttons .fa.fa-twitter')
-	.addEventListener('mouseover', function () {
-
-    		ga('send', 'event', 'Mouseover', 'Footer Twitter Button', 'https://gifardini.github.io/tagTrainer/');
-	});
-	  
-	  // Mouseover sobre o botao do LinkedIn
-	  document.querySelector('footer .list-inline.social-buttons .fa.fa-linkedin')
-	.addEventListener('mouseover', function () {
-
-    		ga('send', 'event', 'Mouseover', 'Footer LinkedIn Button', 'https://gifardini.github.io/tagTrainer/');
-	});
-	  
-	  // Mouseover sobre o botao do Facebook
-	  document.querySelector('footer .list-inline.social-buttons .fa.fa-facebook')
-	.addEventListener('mouseover', function () {
-
-    		ga('send', 'event', 'Mouseover', 'Footer Facebook Button', 'https://gifardini.github.io/tagTrainer/');
-	});
+	  document.querySelector('footer .list-inline.social-buttons').addEventListener('Mouseover', (evt) => {
+		  
+		  if(evt.target.matches('a *')){
+			  
+		  var name = Array.from(evt.path);
+		  	if(name[0].className == "fa fa-twitter"){
+				// Mouseover sobre o botao do Twitter
+				ga('send', 'event', 'Mouseover', 'Footer Twitter Button', 'https://gifardini.github.io/tagTrainer/');
+    			} else if(name[0].className == "fa fa-facebook"){
+				// Mouseover sobre o botao do Facebook
+				ga('send', 'event', 'Mouseover', 'Footer Facebook Button', 'https://gifardini.github.io/tagTrainer/');
+			} else if(name[0].className == "fa fa-linkedin"){
+				// Mouseover sobre o botao do LinkedIn
+				ga('send', 'event', 'Mouseover', 'Footer LinkedIn Button', 'https://gifardini.github.io/tagTrainer/');
+			} 
+		}
+	  }); 
 	  
 	//******************************************************************************************************************
 	// Click nos links politica de privacidade e termos de uso a direita da pagina
-	  
-	var links = Array.from(document.querySelectorAll('footer .list-inline.quicklinks a'));
-	links[0].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Footer Link Politica Privacidade', 'https://gifardini.github.io/tagTrainer/');
-	})
-	links[1].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Footer Link Termos de Uso', 'https://gifardini.github.io/tagTrainer/');
-	})
+	 
+	document.querySelector('footer .list-inline.quicklinks').addEventListener('click', (evt) => {
+		
+		  if(evt.target.matches('a')){
+		  var name = evt.target.textContent;
+		  ga('send', 'event', 'Click', 'Footer Link' + name, 'https://gifardini.github.io/tagTrainer/');
+		}
+	  });   
 	//*******************************************************************************************************************
 	  
  </script>
