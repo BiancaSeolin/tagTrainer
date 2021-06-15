@@ -753,8 +753,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	document.querySelector("#portfolio").addEventListener("click", (evt) => {
   		if(evt.target.matches("a *")) {
     			var target = evt.target;
-    			var name = target.parentElement.parentElement.querySelector("h4").innerText;
-    
+    			var name = target.parentElement.querySelector("h4").innerText;
 			ga('send', 'event', 'Click', "Portfolio " + name, 'https://gifardini.github.io/tagTrainer/');
 		}
 	})
