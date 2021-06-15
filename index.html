@@ -748,8 +748,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
   <!-- End Testando Event Listeners Tag Trainer -->
 
-  <!-- Tags Secao Portifolio -->
+  <!-- Tags Secao Portifolio e Botao Flutuante -->
   <script> 
+	  
+	// Tag Portfolio
 	document.querySelector("#portfolio").addEventListener('click', (evt) => {
   		if(evt.target.matches("a, a *")) {
     			var elementClicked = evt.target.parentElement.parentElement.querySelector("h4");
@@ -757,8 +759,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			ga('send', 'event', 'Click', "Portfolio " + name, 'https://gifardini.github.io/tagTrainer/');
 		}
 	})
+	  
+	// Tag Balao Flutuante
+	var intervalId = setInterval(function () {
+	var img = document.querySelector('#call-me-baby');
+	if(img.style.right === '20px'){
+		ga('send', 'event', 'Load', 'Baloon', 'https://gifardini.github.io/tagTrainer/');
+		clearInterval(intervalId);
+	}
+  }, 1000);
   </script>
-  <!-- Tags Secao Portifolio -->
+  <!-- End Tags Secao Portifolio  e Botao Flutuante-->
 	
   <!-- Tags Menu Superior e Botao Orcamento -->
   
