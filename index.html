@@ -760,27 +760,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
   <!-- Tags Secao Portifolio -->
 	
-  <!-- Tags Menu Superior -->
+  <!-- Tags Menu Superior e Botao Orcamento -->
   
   <script>
-	  var menu = document.querySelectorAll('#mainNav li');
+	  //************************************************************************************************
+	// Tag menu superior
 	  
-	  menu[1].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Menu Servicos', 'https://gifardini.github.io/tagTrainer/');
-	});
-	  menu[2].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Menu Portfolio', 'https://gifardini.github.io/tagTrainer/');
-	});
-	  menu[3].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Menu Sobre', 'https://gifardini.github.io/tagTrainer/');
-	});
-	  menu[4].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Menu Time', 'https://gifardini.github.io/tagTrainer/');
-	});
-	  menu[5].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Menu Contato', 'https://gifardini.github.io/tagTrainer/');
-	});
+	  document.querySelector('#mainNav ul').addEventListener('click', (evt) => {
+		
+		  if(evt.target.matches('a')){
+		  var name = evt.target.textContent;
+		  ga('send', 'event', 'Click', "Menu " + name, 'https://gifardini.github.io/tagTrainer/');
+		}
+	  });
 	  
+	   
 	//************************************************************************************************
 	// Tag botao orcamento
 	  
@@ -789,7 +783,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	});
 	//************************************************************************************************ 
   </script>
-  <!-- End Tags Secao Menu Superior -->
+  <!-- End Tags Menu Superior e Botao Orcamento -->
 
   <!-- Tags Footer -->
   <script>
