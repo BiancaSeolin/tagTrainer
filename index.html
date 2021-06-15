@@ -58,10 +58,8 @@
   }, 60000));
 	  
   // *******************************************************************************************************************
-    
-    var scrollFunction25 = function(){
- 
-    	var h =  document.documentElement,
+    function scrollCalc() {
+	var h =  document.documentElement,
         b =  document.body,
         st =  'scrollTop',
         sh =  'scrollHeight';
@@ -69,7 +67,12 @@
     	var percent = parseInt ( (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
  
    	console.log(percent + "%");
-	    
+	return percent;
+    }
+	  
+    var scrollFunction25 = function(){
+	
+	var percent = scrollCalc();
    	// tag de scroll 25
 	    
    	if (percent == 25){
@@ -79,16 +82,10 @@
   }
 	  
   var scrollFunction50 = function(){
-	var h =  document.documentElement,
-        b =  document.body,
-        st =  'scrollTop',
-        sh =  'scrollHeight';
- 
-    	var percent = parseInt ( (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
- 
-   	console.log(percent + "%");
-	    
+	  
+	var percent = scrollCalc();
   	// tag de scroll50
+	  
   	if (percent == 50){
     		ga('send', 'event', 'Scrolling', '50%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
 		document.removeEventListener('scroll', scrollFunction50);
@@ -96,16 +93,10 @@
   } 
   
   var scrollFunction75 = function(){
-	var h =  document.documentElement,
-        b =  document.body,
-        st =  'scrollTop',
-        sh =  'scrollHeight';
- 
-    	var percent = parseInt ( (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
- 
-   	console.log(percent + "%");
-	    
+	  
+	var percent = scrollCalc();
   	// tag de scroll75
+	  
   	if (percent == 75){
     		ga('send', 'event', 'Scrolling', '75%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
 		document.removeEventListener('scroll', scrollFunction75);
@@ -113,16 +104,10 @@
   } 
  
   var scrollFunction100 = function(){
-	var h =  document.documentElement,
-        b =  document.body,
-        st =  'scrollTop',
-        sh =  'scrollHeight';
- 
-    	var percent = parseInt ( (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
- 
-   	console.log(percent + "%");
-	    
+	  
+	var percent = scrollCalc();
   	// tag de scroll100
+	  
   	if (percent == 100){
     		ga('send', 'event', 'Scrolling', '100%', 'https://gifardini.github.io/tagTrainer/', { 'nonInteraction': 1 });
 		document.removeEventListener('scroll', scrollFunction100);
