@@ -750,16 +750,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Tags Secao Portifolio -->
   <script> 
-	var links = Array.from(document.querySelectorAll('#portfolio .row .portfolio-link'));
-	links[0].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Portfolio Rover', 'https://gifardini.github.io/tagTrainer/');
-	});
-	links[1].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Portfolio Jamilin', 'https://gifardini.github.io/tagTrainer/');
-	});
-	links[2].addEventListener('click', function () {
-		ga('send', 'event', 'Click', 'Portfolio Arngren', 'https://gifardini.github.io/tagTrainer/');
-	});
+	document.querySelector("#portfolio").addEventListener("click", (evt) => {
+  		if(evt.target.matches("a *")) {
+    			var target = evt.target;
+    			var name = target.parentElement.parentElement.querySelector("h4").innerText;
+    
+			ga('send', 'event', 'Click', "Portfolio " + name, 'https://gifardini.github.io/tagTrainer/');
+		}
+	})
   </script>
   <!-- Tags Secao Portifolio -->
 	
